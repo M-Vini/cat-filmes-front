@@ -1,10 +1,9 @@
 'use client';
-import { useState, useEffect } from "react";  
+import { useEffect, useState } from "react";
 
 import { IMovies } from "@/interfaces/movies";
-import { MoviesList } from "@/components/MoviesList";
 
-import styles from "./page.module.css";
+import { MovieCard } from "@/components/MovieCard";
 
 export default function Page() {
 
@@ -23,10 +22,11 @@ export default function Page() {
     fetchMovies();
   }, []);
 
+
   return (
     <div>
       <h1>Filmes em cartaz</h1>
-      <MoviesList movies={movies}/>
+      <MovieCard movies={movies}/>
     </div>
   );
 }
